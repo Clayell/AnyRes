@@ -143,7 +143,11 @@ namespace AnyRes
                 deleteRect = ClickThruBlocker.GUIWindow(09276, deleteRect, ConfirmDelete, "Confirm");
 
             if (Screen.width != GameSettings.SCREEN_RESOLUTION_WIDTH || Screen.height != GameSettings.SCREEN_RESOLUTION_HEIGHT)
+            {
+                Log.Info("Resetting Video Resolution to: " + GameSettings.SCREEN_RESOLUTION_WIDTH + " x " + GameSettings.SCREEN_RESOLUTION_HEIGHT +
+                   (GameSettings.FULLSCREEN ? ", Fullscreen" : ", Windowed"));
                 Screen.SetResolution(GameSettings.SCREEN_RESOLUTION_WIDTH, GameSettings.SCREEN_RESOLUTION_HEIGHT, GameSettings.FULLSCREEN);
+            }
         }
 
         void GUIActive(int windowID)
